@@ -34,7 +34,7 @@ function Register() {
       <div className='mw50 flex justify-end'>
         <img
           className="w35pers h-screen w100per "
-          src={'./Hero.png'}
+          src={'./Register.jpeg'}
           alt="About Hero Image"
         />
       </div>
