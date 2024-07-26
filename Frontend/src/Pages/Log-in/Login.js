@@ -16,7 +16,7 @@ function Login() {
   const handleSubmit = async (event) => {
     console.log("hi")
     event.preventDefault();
-    const res = await fetch('http://localhost:5000/api/auth/login',
+    const res = await fetch('http://localhost:5000/auth/Login',
       {
         method: 'POST',
         credentials: 'include',
@@ -31,7 +31,7 @@ function Login() {
       localStorage.setItem('authUser', JSON.stringify(data))
       setAuthUser(data)
       console.log(data, 'data');
-      navigate('/ClientdashboardHome')
+      navigate('/HomePage')
       }
     }
   
@@ -97,7 +97,9 @@ function Login() {
             </div>
           </form>
           <p className="text-center text-gray-500 mt-4">
-            Don't have an account?{" "}
+            Don't have an account? <a href="/Register" className="underline blueden">
+              Sign in
+            </a>
             {/* <Link
               to="/"
               className="blueden bluedenhover1"

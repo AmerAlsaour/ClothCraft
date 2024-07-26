@@ -23,13 +23,13 @@ function Register() {
   const handleSubmit = async (event) => {
     // console.log(email,password);
     event.preventDefault();
-    const res = await fetch("http://localhost:5000/auth/signup", {
+    const res = await fetch("http://localhost:5000/auth/SignUp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        firstName:inputs.fullname,
+        username:inputs.username,
         email: inputs.email,
         password: inputs.password,
         confirmPassword: inputs.confirmPassword,
@@ -48,7 +48,7 @@ function Register() {
       setAuthUser(data);
       console.log(data, "data");
       
-      navigate("/Homapage");
+      navigate("/HomePage");
     }
   };
   
