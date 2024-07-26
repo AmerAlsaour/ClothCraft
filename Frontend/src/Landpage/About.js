@@ -14,7 +14,7 @@ function About() {
   },[]);
   return (
     <div className="container mx-auto px-4 bg-white py-16 text-center margintop10" >
-      <h2 className="text-3xl font-bold mb-4" data-aos="fade-up" >About us</h2>
+      <h2 className="text-4xl font-bold mb-4 text-orange-500" data-aos="fade-up" >About us</h2>
       <div className="">
         <div className="flex justify-around items-center flexclomn"data-aos="fade-up" >
           <div className='mw50'>

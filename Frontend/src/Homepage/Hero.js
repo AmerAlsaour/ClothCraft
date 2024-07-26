@@ -4,8 +4,8 @@ function Hero() {
   return (
     <div className="">
           <img
-            className="w-full object-cover "
-            src="./Hero.png"
+            className="w-2/3  rounded-e-full borderbluedent"
+            src="./HeroLand.jpeg"
             alt="Hero Image"
           />
       </div>

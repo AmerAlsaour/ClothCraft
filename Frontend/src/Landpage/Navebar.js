@@ -6,12 +6,12 @@ function Navbar() {
   
   return (
     <nav className="bg-white shadow-md sticky top-0 min-w-full z-10">
-      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+      <div className="container mx-auto px-4  flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="text-xl font-bold blueden ml-8">
           <img
-            className=" w-2/4 object-cover "
-            src="./Amer-Logo1.png"
+            className=" w-16 object-cover rounded-full"
+            src="./Amerlogo.jpg"
             alt="Logo Image"
           />
           </a>
@@ -20,13 +20,13 @@ function Navbar() {
           <a href="/about" className="bluedenhover">
             Home
           </a>
-          <a href="/about" className="bluedenhover">
+          <a href="#about" className="bluedenhover">
             About
           </a>
-          <a href="/services" className="bluedenhover">
+          <a href="#services" className="bluedenhover">
             Services
           </a>
-          <a href="/market" className="bluedenhover">
+          <a href="#market" className="bluedenhover">
             Market
           </a>
         </div>
