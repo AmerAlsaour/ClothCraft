@@ -5,7 +5,7 @@ import { generateToken } from "../utils/generateToken.js"
 // Signup Function // ------------------------------------------
 export const SignUp = async (req , res) => {
    try {
-     const {username  , email , password,phone,location } = req.body
+     const {username  , email , password , phone , location } = req.body
      const emailExist = await User.findOne({email})
      if(emailExist){
        return res.status(400).json({error:' Email is Already Taken! '})

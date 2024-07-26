@@ -7,8 +7,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    daisyui,
-  ],
+  plugins: [],
 }
 

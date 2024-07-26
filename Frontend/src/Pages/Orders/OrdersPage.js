@@ -32,11 +32,10 @@ const orders = [
 
 const OrdersPage = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Orders</h1>
-      {orders.map((order) => (
-        <OrderCard key={order.id} order={order} />
-      ))}
+    <div className="container p-4 flex flex-col gap-8 max-w-full max-h-full bg-stone-500   mx-auto  ">
+      <h1 className="text-3xl mx-auto font-bold mb-4">Orders</h1>
+      <OrderCard/>
+      <OrderCard/>
     </div>
   );
 }
