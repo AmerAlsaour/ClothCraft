@@ -14,3 +14,18 @@ export const makeOrder =async (req,res)=>{
     
     
 }
+
+
+export const  getOrders = async (req,res)=>{
+    try {
+        const {username} = req.user
+        if(username !== "medo")
+            return res.status(401)
+        const orders = await Order.find().populate('buyerId')
+        res.status(200).json(orders)
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error:"internal server error"});
+    }
+} 
