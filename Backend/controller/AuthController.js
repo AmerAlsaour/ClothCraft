@@ -6,19 +6,19 @@ import { generateToken } from "../utils/generateToken.js"
 export const SignUp = async (req , res) => {
    try {
      const {username  , email , password,phone,location } = req.body
+     const emailExist = await User.findOne({email})
+     if(emailExist){
+       return res.status(400).json({error:' Email is Already Taken! '})
+     }
      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
      if(!emailRegex.test(email)){
        return res.status(400).json({error:'Invalid Email Format!'})   
       }
-      console.log(username);
-      console.log(",asjd");
+      // console.log(username);
+      // console.log(",asjd");
       const userExist = await User.findOne({username})
       if(userExist){
         return res.status(400).json({error:'Username Already Exist!'})
-      }
-      const emailExist = await User.findOne({email})
-      if(emailExist){
-        return res.status(400).json({error:' Email is Already Taken! '})
       }
       const salt = await bcrypt.genSalt(10)
       const hashPassword = await bcrypt.hash(password , salt)
