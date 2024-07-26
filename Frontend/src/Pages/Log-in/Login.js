@@ -6,7 +6,6 @@ function Login() {
   const { authUser, setAuthUser } = useContext(AuthContext); // Access authUser from AuthContext
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleEmailChange = (event) => {
     setUsername(event.target.value);
@@ -24,7 +23,6 @@ function Login() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
         body: JSON.stringify({ username, password })
       })
     console.log(res, 'res');
