@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 // import useSignUp from '../../hooks/useSignUp';
 import { useAuthContext } from '../../context/AuthContext';
 import '../../Component/Style.css'
+import toast from 'react-hot-toast';
 function Register() {
   const [inputs, setInputs] = useState({
     username: '',
@@ -39,9 +40,9 @@ function Register() {
       }),
     });
     console.log(res, "res");
+    const data = await res.json();
     if (res.ok) {
       console.log(res.ok);
-      const data = await res.json();
       console.log(data.token, "token");
       localStorage.setItem("authUser", JSON.stringify(data));
       // context
@@ -50,6 +51,8 @@ function Register() {
       
       navigate("/HomePage");
     }
+    else
+    toast.error(data.error)
   };
   
   return (

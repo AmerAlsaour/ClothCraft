@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import '../../Component/Style.css'
+import toast from "react-hot-toast";
 function Login() {
   const { authUser, setAuthUser } = useContext(AuthContext); // Access authUser from AuthContext
   const navigate = useNavigate();
@@ -26,25 +27,27 @@ function Login() {
         body: JSON.stringify({ username, password })
       })
     console.log(res, 'res');
+    const data = await res.json()
     if (res.ok) {
-      const data = await res.json()
       localStorage.setItem('authUser', JSON.stringify(data))
       setAuthUser(data)
       console.log(data, 'data');
       navigate('/HomePage')
-      }
     }
-  
+    else
+      toast.error(data.error)
+  }
+
   return (
-  <div className='flex items-center justify-start min-h-screen bg-white flexclomn'>
-    <div className=" flex justify-start  w-full w100per">
-      <img
-        className=" w35pers h-screen w100per rounded-s-full borderbluedent border-8  "
-        src={'./Hero.png'}
-        alt="Hero Image"
-      />
-    </div>
-    <div className="  w-full  ">
+    <div className='flex items-center justify-start min-h-screen bg-white flexclomn'>
+      <div className=" flex justify-start  w-full w100per">
+        <img
+          className=" w35pers h-screen w100per rounded-s-full borderbluedent border-8  "
+          src={'./Hero.png'}
+          alt="Hero Image"
+        />
+      </div>
+      <div className="  w-full  ">
         <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md margintop1  ">
           <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
           <p className="text-gray-600 text-center mb-6">
@@ -109,7 +112,7 @@ function Login() {
           </p>
         </div>
       </div>
-  </div>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Buttondark() {
   const navigate = useNavigate();
   const handleClickLogin = () => {
-    navigate('/login', { replace: true }); // navigate to /another-page
+    navigate('/Register', { replace: true }); // navigate to /another-page
   };
   return (
     <div className=" md:flex  items-center">
