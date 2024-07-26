@@ -12,7 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import { FaBold } from "react-icons/fa";
 import { FaItalic } from 'react-icons/fa';
 import html2canvas from 'html2canvas';
-
+import { useNavigate } from 'react-router-dom';
 
 function Customization() {
   const [color, setColor] = useState("Black");
@@ -30,7 +30,7 @@ function Customization() {
   const [isBold, setIsBold] = useState(false);
   const [isItalic, setIsItalic] = useState(false);
   const [fontSize, setFontSize] = useState('md');
-
+  const navigate = useNavigate(); 
   const images = {
     Black: { front: frontBlack, back: backBlack },
     Blue: { front: frontBlue, back: backBlue },
@@ -114,7 +114,9 @@ function Customization() {
       bottom: rect.height,
     };
   };
-
+  const handleClickSign = () => {
+    navigate('/HomePage', { replace: true }); // navigate to /another-page
+  };
   const keepElementInBounds = (left, top, width, height) => {
     const bounds = getBounds();
     const maxX = bounds.right - width;
@@ -151,10 +153,43 @@ function Customization() {
 
   const currentElements = isFront ? frontElements : backElements;
   return (
-    <div className="flex flex-col md:flex-row p-4">
+  <div>
+  <nav className="bg-white shadow-md sticky top-0 min-w-full z-10">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="flex items-center">
+        <button className=" bgblueden  text-xl  borderbluedent border-2 rounded-xl px-8  text-white font-bold py-1 focus:outline-none focus:shadow-outline" onClick={handleClickSign}>
+            <span className=" text-2xl font-extrabold">&lt;   </span>Back 
+          </button>
+        </div>
+        <div className="hidden md:flex items-center space-x-6">
+          <a href="/about" className="bluedenhover">
+            Home
+          </a>
+          <a href="/about" className="bluedenhover">
+            About
+          </a>
+          <a href="/services" className="bluedenhover">
+            Services
+          </a>
+          <a href="/market" className="bluedenhover">
+            Market
+          </a>
+        </div>
+        <div className=" md:flex  items-center mr-8 ">
+          <a href="/" className="text-xl font-bold blueden ml-8">
+          <img
+            className=" w-2/4 object-cover "
+            src="./Amer-Logo1.png"
+            alt="Logo Image"
+          />
+          </a>
+        </div>
+      </div>
+    </nav>
+  <div className="flex flex-col md:flex-row p-4">
       {showTextInputDialog &&
         <div className='fixed top-20 left-1/3 w-[28rem] pb-5 bg-gray-500 opacity-[0.98] z-50 flex flex-col justify-between items-center rounded-lg'>
-          <div className='bg-gray-600 p-2 flex items-center justify-between w-full'>
+          <div className=' bgblueden p-2 flex items-center justify-between w-full'>
             <h3 className='text-2xl font-bold text-white '>Add Text</h3>
             <IoMdClose onClick={() => setShowTextInputDialog(false)} className='size-6 hover:cursor-pointer text-white' />
           </div>
@@ -201,14 +236,14 @@ function Customization() {
             </div>
           </div>
           <div className="flex justify-between mt-4">
-            <button onClick={() => setIsBold(!isBold)} className={`bg-gray-700 hover:bg-gray-900 mr-2 text-white font-bold py-2 px-4 rounded ${isBold ? 'bg-blue-500' : ''}`}>
+            <button onClick={() => setIsBold(!isBold)} className={`bgblueden hover:bg-gray-900 mr-2 text-white font-bold py-2 px-4 rounded ${isBold ? 'bg-blue-500' : ''}`}>
               <FaBold />
             </button>
-            <button onClick={() => setIsItalic(!isItalic)} className={`bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded ${isItalic ? 'bg-blue-500' : ''}`}>
+            <button onClick={() => setIsItalic(!isItalic)} className={`bgblueden hover:bg-gray-900 text-white font-bold py-2 px-4 rounded ${isItalic ? 'bg-blue-500' : ''}`}>
               <FaItalic />
             </button>
           </div>
-          <button onClick={addText} className='self-end bg-orange-400 text-white mr-4 p-2 rouned'>
+          <button onClick={addText} className='self-end bgblueden text-white mr-4 p-2 rouned'>
             Add text
           </button>
         </div>
@@ -233,13 +268,13 @@ function Customization() {
           <div className="flex space-x-2">
             <button
               onClick={() => setIsFront(true)}
-              className={`px-4 py-2 rounded ${isFront ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+              className={`px-4 py-2 rounded ${isFront ? 'bgblueden text-white' : 'bg-gray-200'}`}
             >
               Front
             </button>
             <button
               onClick={() => setIsFront(false)}
-              className={`px-4 py-2 rounded ${!isFront ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+              className={`px-4 py-2 rounded ${!isFront ? 'bgblueden text-white' : 'bg-gray-200'}`}
             >
               Back
             </button>
@@ -261,7 +296,7 @@ function Customization() {
         <div className="mb-4 ">
           <button
             onClick={() => setShowTextInputDialog(true)}
-            className="w-full p-2 mb-2 bg-blue-500 hover:bg-blue-700 text-white gap-3 rounded"
+            className="w-full p-2 mb-2 bg-orange-400 hover:bg-orange-500 text-white gap-3 rounded"
           >
             Add Text
           </button>
@@ -277,7 +312,7 @@ function Customization() {
         </div>
         <button
           onClick={exportDesign}
-          className="w-full p-2 mt-4 bg-green-500 text-white rounded"
+          className="w-full p-2 mt-4 bg-orange-500 hover:bg-orange-700 text-white rounded"
         >
           Save Design and Purchase
         </button>
@@ -336,6 +371,8 @@ function Customization() {
         </div>
       </div>
     </div>
+  </div>
+    
   );
 }
 

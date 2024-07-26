@@ -3,44 +3,44 @@ import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md"
 import { motion } from 'framer-motion';
 import './../Component/Style.css';
 
-function Service() {
+function Market2() {
   const scrollContainerRef = useRef(null);
   useEffect(()=>{
     AOS.init({ duration:1000});
   },[]);
   const services = [
     {
-      imgSrc: '/Asta.jpeg',
+      imgSrc: '/market6.jpeg',
       alt: 'tuth',
-      title: 'Your favorite photos  ',
+      title: 'programer  ',
       description: 'some text some text some \n some text some text . ',
     },
     {
-      imgSrc: '/Student.jpeg',
+      imgSrc: '/market7.jpeg',
       alt: 'alhawsha',
-      title: 'Your favorite Writing',
+      title: 'kiloua',
       description: 'some text some text some \n some text some text .',
     },
     {
-      imgSrc: '/spilled milk.jpeg',
+      imgSrc: '/market8.jpeg',
       alt: 'alhawsha',
-      title: 'Your favorite design',
+      title: 'The Sun',
       description: 'some text some text some \n some text some text .',
     },
     {
-      imgSrc: '/loading.jpeg',
+      imgSrc: '/market9.jpeg',
       alt: 'alhawsha',
-      title: 'Your favorite work',
+      title: 'Mikasa',
       description: 'some text some text some \n some text some text .',
     },
     {
-      imgSrc: '/moon.jpeg',
+      imgSrc: '/market10.jpeg',
       alt: 'alhawsha',
-      title: 'Your favorite shape',
+      title: 'Attak on titan',
       description: 'some text some text some \n some text some text .',
     },
     {
-      imgSrc: '/Bear.jpeg',
+      imgSrc: '/market11.jpeg',
       alt: 'alhawsha',
       title: 'Your favorite creative',
       description: 'some text some text some \n some text some text .',
@@ -63,10 +63,6 @@ function Service() {
   
   return (
     <div className="container mx-auto px-4 py-16">
-      <h2 className="text-4xl font-bold text-center mb-8 text-orange-500" data-aos="fade-right">Services</h2>
-      <p className="text-2xl text-gray-600 text-center mb-16" data-aos="fade-right">
-        Our team can help with a variety of T shirt.
-      </p>
       <div className="relative flex justify-center items-center" data-aos="fade-right">
         <button onClick={scrollLeft} className="absolute left-0 text-2xl w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center">
           <MdOutlineArrowBackIos />
@@ -105,4 +101,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default Market2;
