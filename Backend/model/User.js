@@ -6,39 +6,6 @@ const Usermodel = mongoose.Schema(
     password: { type: String, require: true },
     phone: { type: Number, require: true },
     location: { type: String, require: true },
-    orders: [
-      {
-        id: { type: String},
-        products: 
-          {
-            frontimage: { type: String},
-            backimage: { type: String},
-            baseShirt: {
-              id:{ type: mongoose.Schema.Types.ObjectId,
-              ref: "TShirt"},
-              color: { type: String},
-            },
-            elements: [
-              {
-                customType: { type: String},
-                src: { type: String},
-                position: {
-                  x: { type: String,},
-                  y: { type: String,},
-                },
-                isface: { type: Boolean},
-                size: {
-                  width: { type: Number},
-                  height: { type: Number},
-                },
-                rotate:{ type: Number},
-                zindex: { type: Number}
-              },
-            ],
-          },
-        Date:{type:Date, default:Date.now()}
-      },
-    ],
   },
   {
     timestamps: true,
