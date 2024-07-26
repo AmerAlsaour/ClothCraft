@@ -140,14 +140,12 @@ function Customization() {
     console.log('Front Image:', frontImage);
     console.log('Back Image:', backImage);
 
-    // Example of how you might send this to a backend:
-    // const response = await fetch('/api/save-design', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ frontImage, backImage, color, size })
-    // });
+    const response = await fetch('http://localhost:5000/order/buy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ frontImage, backImage, color, size })
+    });
     // const result = await response.json();
-    // console.log(result);
   };
 
   const currentElements = isFront ? frontElements : backElements;

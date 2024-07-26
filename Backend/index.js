@@ -5,7 +5,8 @@ import cookieParser from "cookie-parser";
 
 // Routes // -------------------------------------
 import AuthRouter from "./routes/authRouter.js";
-import UserRouter from './routes/userRouter.js'
+import UserRouter from './routes/userRouter.js';
+import OrderRouter from './routes/ordersRouter.js'
 // -----------------------------------------------
 const port = process.env.Port || 5000;
 const app = express();
@@ -18,7 +19,8 @@ app.use(cors({ origin:'http://localhost:3000', credentials:true }))
 app.use(cookieParser())
 
 app.use("/auth", AuthRouter);
-app.use('/user' , UserRouter)
+app.use('/user' , UserRouter);
+app.use('/order' , OrderRouter);
 
 connectDb(MONGO_URL);
 app.listen(port, () => {
