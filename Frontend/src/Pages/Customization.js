@@ -139,14 +139,15 @@ function Customization() {
 
     console.log('Front Image:', frontImage);
     console.log('Back Image:', backImage);
-
     const response = await fetch('http://localhost:5000/order/buy', {
       method: 'POST',
+      credentials:'include',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ frontImage, backImage, color, size })
+      body: JSON.stringify({ frontImage, backImage, color, size,frontElements,backElements })
     });
     // const result = await response.json();
   };
+  console.log(frontElements,'frontElements');
 
   const currentElements = isFront ? frontElements : backElements;
   return (
