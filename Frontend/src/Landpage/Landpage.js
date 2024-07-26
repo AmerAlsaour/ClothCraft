@@ -6,7 +6,7 @@ import Service from './Service'
 import WharPeopleSay from './WharPeopleSay'
 import Market from './Market'
 import Footer from './Footer'
-function Homepage() {
+function Landpage() {
   return (
     <div className='bg-white'>
       <Navbar />
@@ -20,4 +20,4 @@ function Homepage() {
   )
 }
 
-export default Homepage
+export default Landpage;
