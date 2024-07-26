@@ -1,44 +1,36 @@
-import React from 'react'
-import OrderCard from '../../components/OrderCard';
-
-
-
-const orders = [
-  {
-    id: 'ORDER-123',
-    username: 'John Doe',
-    email: 'johndoe@example.com',
-    products: [
-      {
-        frontimage: 'https://via.placeholder.com/50',
-        baseShirt: {
-          color: 'Red',
-        },
-        elements: [
-          {
-            customType: 'Text',
-            src: 'https://via.placeholder.com/20',
-            position: {
-              x: 10,
-              y: 20,
-            },
-          },
-        ],
-      },
-    ],
-    Date: new Date('2022-01-01T12:00:00.000Z'),
-  },
-];
+import React, { useEffect, useState } from "react";
+import OrderCard from "../../components/OrderCard";
+import { Resizable } from "react-moveable";
 
 const OrdersPage = () => {
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    async function getOrders() {
+      const res = await fetch("http://localhost:5000/order/getorders", {
+        credentials: "include",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setOrders(data);
+        console.log(data);
+      }
+    }
+    getOrders();
+  }, []);
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Orders</h1>
-      {orders.map((order) => (
-        <OrderCard key={order.id} order={order} />
-      ))}
-    </div>
+    <>
+      <div className="container items-center p-4 flex flex-col gap-8 max-w-full min-h-[100vh]  mx-auto  ">
+      <h1 className="text-3xl mx-auto font-bold mb-4">Orders</h1>
+        {orders.map((order) => (
+          <OrderCard
+            front={order.frontImage}
+            back={order.backImage}
+            buyer={order.buyerId.username}
+          />
+        ))}
+      </div>
+    </>
   );
-}
+};
 
-export default OrdersPage
+export default OrdersPage;
