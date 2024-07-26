@@ -24,7 +24,7 @@ function WharPeopleSay() {
                 transition={{ duration: 1 }}
             >
                 <div>
-                    <h1 className='mb-11 pt-2 font-bold text-3xl text-center' data-aos="fade-left">What do people say about us?</h1>
+                    <h1 className='mb-11 pt-2 font-bold text-3xl text-center text-orange-500' data-aos="fade-left">Testimonials</h1>
                 </div>
                 <motion.div
                     className='flex flex-row bg-white w-[390px] h-[95px] ml-7 mb-11'
