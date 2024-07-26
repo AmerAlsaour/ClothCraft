@@ -80,7 +80,7 @@ function Register() {
                 value={inputs.username}
                 onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="First Name"
+                // placeholder="First Name"
               />
             </div>
             <div className="relative flex flex-col w-full">
@@ -94,7 +94,7 @@ function Register() {
                 value={inputs.location}
                 onChange={(e) => setInputs({ ...inputs, location: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Last Name"
+                // placeholder="Last Name"
               />
             </div>
           </div>
@@ -110,7 +110,7 @@ function Register() {
                 value={inputs.email}
                 onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="john.doe@gmail.com"
+                // placeholder="john.doe@gmail.com"
               />
             </div>
             <div className="relative flex flex-col w-full">
@@ -124,7 +124,7 @@ function Register() {
                 value={inputs.phone}
                 onChange={(e) => setInputs({ ...inputs, phone: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="phoneNumber"
+                // placeholder="phoneNumber"
               />
             </div>
           </div>
@@ -139,7 +139,7 @@ function Register() {
               value={inputs.password}
               onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
               className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="password  "
+              // placeholder="password  "
             />
           </div>
           <div className="relative flex flex-col w-full">
@@ -153,7 +153,7 @@ function Register() {
               value={inputs.confirmPassword}
               onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
               className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Confirm Password"
+              // placeholder="Confirm Password"
             />
           </div>
           <button

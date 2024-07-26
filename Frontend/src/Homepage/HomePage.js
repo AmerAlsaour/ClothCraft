@@ -12,7 +12,6 @@ function HomePage() {
     <div className="bg-white">
       <Navbar />
       <Herosection/>
-     <h1>OUR Product</h1>
       <Market />
       <Market />
       <Market />

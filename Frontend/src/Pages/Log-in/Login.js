@@ -16,7 +16,7 @@ function Login() {
   const handleSubmit = async (event) => {
     console.log("hi")
     event.preventDefault();
-    const res = await fetch('http://localhost:5000/auth/Login',
+    const res = await fetch('http://localhost:5000/auth/login',
       {
         method: 'POST',
         credentials: 'include',
@@ -39,7 +39,7 @@ function Login() {
   <div className='flex items-center justify-start min-h-screen bg-white flexclomn'>
     <div className=" flex justify-start  w-full w100per">
       <img
-        className=" w35pers h-screen w100per   "
+        className=" w35pers h-screen w100per rounded-s-full borderbluedent border-8  "
         src={'./Hero.png'}
         alt="Hero Image"
       />

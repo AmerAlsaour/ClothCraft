@@ -5,10 +5,10 @@ import './../Component/Style.css'
 function Navbar() {
   
   return (
-    <nav className="bg-white shadow-md fixed top-0 w-dvw z-10">
+    <nav className="bg-white shadow-md sticky top-0 min-w-full z-10">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-xl font-bold blueden">
+          <a href="/" className="text-xl font-bold blueden ml-8">
           <img
             className=" w-2/4 object-cover "
             src="./Amer-Logo1.png"
@@ -30,7 +30,7 @@ function Navbar() {
             Market
           </a>
         </div>
-        <div className=" md:flex  items-center">
+        <div className=" md:flex  items-center mr-8 ">
         <Buttonlight/>
         </div>
       </div>
