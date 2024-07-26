@@ -8,25 +8,37 @@ function Service() {
 
   const services = [
     {
-      imgSrc: '/1784-removebg-preview.png',
+      imgSrc: '/Asta.jpeg',
       alt: 'tuth',
       title: 'Cosmetic Dentistry',
       description: 'some text some text some \n some text some text . ',
     },
     {
-      imgSrc: '/alhashwa.png',
+      imgSrc: '/Student.jpeg',
       alt: 'alhawsha',
       title: 'Orthodontics',
       description: 'some text some text some \n some text some text .',
     },
     {
-      imgSrc: '/talmea.png',
+      imgSrc: '/spilled milk.jpeg',
       alt: 'alhawsha',
       title: 'Oral Hygiene',
       description: 'some text some text some \n some text some text .',
     },
     {
-      imgSrc: '/background.png',
+      imgSrc: '/loading.jpeg',
+      alt: 'alhawsha',
+      title: 'Cosmetic Dentistry',
+      description: 'some text some text some \n some text some text .',
+    },
+    {
+      imgSrc: '/moon.jpeg',
+      alt: 'alhawsha',
+      title: 'Cosmetic Dentistry',
+      description: 'some text some text some \n some text some text .',
+    },
+    {
+      imgSrc: '/Bear.jpeg',
       alt: 'alhawsha',
       title: 'Cosmetic Dentistry',
       description: 'some text some text some \n some text some text .',
@@ -69,7 +81,7 @@ function Service() {
               transition={{ type: 'spring', stiffness: 300 }}
             >
               <div className="flex justify-center rounded-t-3xl items-center mb-4 w-80 h-[226px] bg-gray-200">
-                <img src={service.imgSrc} alt={service.alt} className="w-64" />
+                <img src={service.imgSrc} alt={service.alt} className=" w-80 rounded-t-3xl h-[226px]" />
               </div>
               <div className="p-8">
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>

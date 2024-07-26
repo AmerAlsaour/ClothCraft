@@ -14,8 +14,8 @@ function About() {
         <div className="flex justify-around items-center flexclomn ">
           <div className='mw50'>
             <img
-              className=" object-cover w-3/5"
-              src="./Amer-Logo1.png"
+              className=" object-cover w-3/5 rounded-s-full"
+              src="./About1.jpeg"
               alt="About Hero Image"
             />
           </div>
@@ -75,8 +75,8 @@ function About() {
           </div>
           {/* ============================================= */}
           <div className='w-[50%] flex items-center justify-center'><img
-            className="w-96 mb-6 "
-            src="./Amer-Logo1.png"
+            className="w-96 mb-6  rounded-e-full"
+            src="./About3.jpeg"
             alt="About Hero Image" />
           </div>
         </div>

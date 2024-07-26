@@ -5,7 +5,7 @@ function Hero() {
     <div className="">
           <img
             className="w-full object-cover "
-            src="./Hero.png"
+            src="./HeroLand.jpeg"
             alt="Hero Image"
           />
       </div>

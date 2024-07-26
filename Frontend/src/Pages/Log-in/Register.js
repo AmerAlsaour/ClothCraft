@@ -5,27 +5,50 @@ import { useAuthContext } from '../../context/AuthContext';
 import '../../Component/Style.css'
 function Register() {
   const [inputs, setInputs] = useState({
-    firstName: '',
-    lastName: '',
+    username: '',
     email: '',
-    phone: '',
+    phoneNumber: "",
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    location: "",
   });
-  const loading=1;
-  // const { loading, sign } = useSignUp();
-  // const { authUser } = useAuthContext();
-  // const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await sign(inputs);
-    console.log('inputs', response);
-
-    // Check if the response indicates a successful sign-up
-    if (response) {
-      // Navigate to the Client dashboard Home page
-      navigate('/ClientdashboardHome');
+  const { authUser, setAuthUser } = useAuthContext();
+  const navigate = useNavigate();
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (event) => {
+    // console.log(email,password);
+    event.preventDefault();
+    const res = await fetch("http://localhost:5000/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName:inputs.fullname,
+        email: inputs.email,
+        password: inputs.password,
+        confirmPassword: inputs.confirmPassword,
+        phone: inputs.phone,
+        location: inputs.location,
+        birthDate: inputs.birthDate,
+      }),
+    });
+    console.log(res, "res");
+    if (res.ok) {
+      console.log(res.ok);
+      const data = await res.json();
+      console.log(data.token, "token");
+      localStorage.setItem("authUser", JSON.stringify(data));
+      // context
+      setAuthUser(data);
+      console.log(data, "data");
+      
+      navigate("/Homapage");
     }
   };
   
@@ -33,7 +56,7 @@ function Register() {
     <div className='flex justify-around items-center flex-row-reverse flexclomn margintop1'>
       <div className='mw50 flex justify-end'>
         <img
-          className="w35pers h-screen w100per "
+          className="w35pers h-screen w100per rounded-e-full borderbluedent border-8 "
           src={'./Register.jpeg'}
           alt="About Hero Image"
         />
@@ -49,27 +72,27 @@ function Register() {
           <div className="flex gap-4">
             <div className="relative flex flex-col w-full">
               <label htmlFor="text" className="text-gray-700 text-sm font-bold mb-2 bg-white absolute top-15 left-3 px-2">
-                First Name
+                username
               </label>
               <input
                 type="text"
                 id="text"
-                value={inputs.firstName}
-                onChange={(e) => setInputs({ ...inputs, firstName: e.target.value })}
+                value={inputs.username}
+                onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="First Name"
               />
             </div>
             <div className="relative flex flex-col w-full">
               <label htmlFor="text" className="text-gray-700 text-sm font-bold mb-2 bg-white absolute top-15 left-3 px-2">
-                Last Name
+                Location
               </label>
               <input
                 type="text"
                 id="lastName"
-                name="lastName"
-                value={inputs.lastName}
-                onChange={(e) => setInputs({ ...inputs, lastName: e.target.value })}
+                name="location"
+                value={inputs.location}
+                onChange={(e) => setInputs({ ...inputs, location: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Last Name"
               />
@@ -135,14 +158,14 @@ function Register() {
           </div>
           <button
             type="submit"
-            className=" bgblueden bgbluedenhover1 text-white font-bold py-2 px-4 rounded"
-            disabled={loading}
-          >
-            {loading ? <span className='loading loading-spinner'>Register</span> : "Sign Up"}
+            className=" bgblueden bgbluedenhover1 text-white font-bold py-2 px-4 rounded">
+            sign up
           </button>
           <p className="text-center mt-1 ">
             Already have an account?{' '}
-            {/* <Link to="/login">Login</Link> */}
+            <a href="/Login" className="underline blueden">
+              Login
+            </a>
           </p>
         </form> 
       </div>

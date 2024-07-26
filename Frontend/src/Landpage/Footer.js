@@ -10,7 +10,7 @@ function Footer() {
         <div className="bg-gray-200 py-6 ">
             <div className="flex flex-col items-center">
                 <div className="text-xl font-bold mb-2 mt-5">
-                    <span >SMILE </span><span>BRIDGE</span>
+                    <span >CLOTH </span><span className=' text-amber-600'>CRAFT</span>
                 </div>
                 <div className="flex space-x-4 mb-6 w-36 h-[2px] bg-black ">
                 </div>
@@ -28,11 +28,11 @@ function Footer() {
             <div className="flex justify-center space-x-56">
                 <div className="flex items-center space-x-2">
                        <div className='text-3xl text-[#fc9816]'><IoMdCall /></div>
-                    <span className="text-xl">+963-912-345-678</span>
+                    <span className="text-xl">+963-935-919-757</span>
                 </div>
                 <div className="flex items-center space-x-2">
                 <div className='text-3xl text-[#fc9816]'><FiMail /></div>
-                    <span className="text-xl">smilebridge@gmail.com</span>
+                    <span className="text-xl">amer.alsaoor@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-2">
                 <div className='text-3xl text-[#fc9816]'><FaLocationDot /></div>
