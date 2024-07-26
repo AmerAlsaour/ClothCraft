@@ -3,8 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import '../../Component/Style.css'
 function Login() {
-  // const { authUser, setAuthUser } = useContext(AuthContext); // Access authUser from AuthContext
-  // const navigate = useNavigate();
+  const { authUser, setAuthUser } = useContext(AuthContext); // Access authUser from AuthContext
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleEmailChange = (event) => {
@@ -31,18 +31,10 @@ function Login() {
       localStorage.setItem('authUser', JSON.stringify(data))
       setAuthUser(data)
       console.log(data, 'data');
-      if (data.role === 'client') {
-        navigate('/ClientdashboardHome')
-      } else {
-        if (!data.services || !data.workDays) {
-          navigate('/Dentalform')
-
-        } else {
-          navigate('/DoctordashboardHome')
-        }
+      navigate('/ClientdashboardHome')
       }
     }
-  }
+  
   return (
   <div className='flex items-center justify-start min-h-screen bg-white flexclomn'>
     <div className=" flex justify-start  w-full w100per">

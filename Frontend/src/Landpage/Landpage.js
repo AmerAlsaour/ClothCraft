@@ -14,7 +14,7 @@ function Landpage() {
       <About/>
       <Service/>
       <WharPeopleSay/>
-      <Market/>
+      {/* <Market/> */}
       <Footer/>
     </div>
   )
