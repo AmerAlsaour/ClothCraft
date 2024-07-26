@@ -4,6 +4,8 @@ import Register from "./Pages/Log-in/Register.js";
 import Landpage from "./Landpage/Landpage.js";
 import {BrowserRouter as Router,Routes,Route,Navigate,} from "react-router-dom";
 import HomePage from "./Homepage/HomePage.js";
+import OrdersPage from "./Pages/Orders/OrdersPage.js";
+import Customization from './Pages/Customization.js'
 function App() {
   return (
     <div className='App'>
@@ -11,6 +13,7 @@ function App() {
           <Routes>
           <Route path="/HomePage" element={<HomePage />} />
             <Route path="/" element={<Landpage />} />
+            <Route path="/customize" element={<Customization />} />
             <Route path="/orders" element={<OrdersPage />} />
             <Route path='/Login' element={<Login />} />
             <Route path='/Register' element={<Register />} />
