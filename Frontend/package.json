@@ -5,6 +5,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "dom": "^0.0.3",
     "framer-motion": "^11.3.17",
     "html2canvas": "^1.4.1",

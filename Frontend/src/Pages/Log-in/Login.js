@@ -5,10 +5,10 @@ import '../../Component/Style.css'
 function Login() {
   const { authUser, setAuthUser } = useContext(AuthContext); // Access authUser from AuthContext
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+    setUsername(event.target.value);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -16,14 +16,14 @@ function Login() {
   const handleSubmit = async (event) => {
     console.log("hi")
     event.preventDefault();
-    const res = await fetch('http://localhost:5000/auth/Login',
+    const res = await fetch('http://localhost:5000/auth/login',
       {
         method: 'POST',
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ username, password })
       })
     console.log(res, 'res');
     if (res.ok) {
@@ -39,7 +39,7 @@ function Login() {
   <div className='flex items-center justify-start min-h-screen bg-white flexclomn'>
     <div className=" flex justify-start  w-full w100per">
       <img
-        className=" w35pers h-screen w100per   "
+        className=" w35pers h-screen w100per rounded-s-full borderbluedent border-8  "
         src={'./Hero.png'}
         alt="Hero Image"
       />
@@ -56,13 +56,13 @@ function Login() {
                 htmlFor="email"
                 className="block text-gray-700  mb-2  bg-white absolute top-15 left-3 px-2"
               >
-                Email
+                Username
               </label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={email}
+                value={username}
                 onChange={handleEmailChange}
               />
             </div>
