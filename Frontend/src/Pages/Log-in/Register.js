@@ -5,7 +5,7 @@ import { useAuthContext } from '../../context/AuthContext';
 import '../../Component/Style.css'
 function Register() {
   const [inputs, setInputs] = useState({
-    fullname: '',
+    username: '',
     email: '',
     phoneNumber: "",
     password: '',
@@ -23,7 +23,7 @@ function Register() {
   const handleSubmit = async (event) => {
     // console.log(email,password);
     event.preventDefault();
-    const res = await fetch("http://localhost:5000/api/register", {
+    const res = await fetch("http://localhost:5000/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function Register() {
         email: inputs.email,
         password: inputs.password,
         confirmPassword: inputs.confirmPassword,
-        phone: inputs.phoneNumber,
+        phone: inputs.phone,
         location: inputs.location,
         birthDate: inputs.birthDate,
       }),
@@ -72,13 +72,13 @@ function Register() {
           <div className="flex gap-4">
             <div className="relative flex flex-col w-full">
               <label htmlFor="text" className="text-gray-700 text-sm font-bold mb-2 bg-white absolute top-15 left-3 px-2">
-                Full Name
+                username
               </label>
               <input
                 type="text"
                 id="text"
-                value={inputs.fullname}
-                onChange={(e) => setInputs({ ...inputs, firstName: e.target.value })}
+                value={inputs.username}
+                onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="First Name"
               />
@@ -92,7 +92,7 @@ function Register() {
                 id="lastName"
                 name="location"
                 value={inputs.location}
-                onChange={(e) => setInputs({ ...inputs, lastName: e.target.value })}
+                onChange={(e) => setInputs({ ...inputs, location: e.target.value })}
                 className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Last Name"
               />
