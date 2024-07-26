@@ -17,7 +17,7 @@ function Herosection() {
         {/* ===== */}
         <div className='bg-white mb-14'>
             <p className='text-2xl'>The bridge between you </p>
-            <p className='text-2xl'>and the best dental students </p>
+            <p className='text-2xl'>and the best Clothes industry </p>
         </div>
         {/* ===== */}
         <div className='flex flex-row'>
@@ -28,7 +28,7 @@ function Herosection() {
         </div>
       </div>
       {/* ==========50%========== */}
-      <div className='w-[50%]'>
+      <div className='w-[50%] ml-10'>
         <Hero />
       </div>
     </div>

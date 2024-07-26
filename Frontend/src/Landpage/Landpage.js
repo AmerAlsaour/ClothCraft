@@ -11,10 +11,9 @@ function Landpage() {
     <div className='bg-white'>
       <Navbar />
       <Herosection/>
-      <About/>
+      <About />
       <Service/>
       <WharPeopleSay/>
-      {/* <Market/> */}
       <Footer/>
     </div>
   )

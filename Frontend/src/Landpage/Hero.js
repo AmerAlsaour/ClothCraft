@@ -2,9 +2,9 @@ import React from 'react';
 import './../Component/Style.css'
 function Hero() {
   return (
-    <div className="">
+    <div className=" ">
           <img
-            className="w-full object-cover "
+            className=" w-2/3  rounded-e-full borderbluedent "
             src="./HeroLand.jpeg"
             alt="Hero Image"
           />

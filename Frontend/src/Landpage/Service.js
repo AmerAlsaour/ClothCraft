@@ -1,46 +1,48 @@
-import React, { useRef } from 'react';
+import React, { useRef ,useEffect} from 'react';
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md";
 import { motion } from 'framer-motion';
 import './../Component/Style.css';
 
 function Service() {
   const scrollContainerRef = useRef(null);
-
+  useEffect(()=>{
+    AOS.init({ duration:1000});
+  },[]);
   const services = [
     {
       imgSrc: '/Asta.jpeg',
       alt: 'tuth',
-      title: 'Cosmetic Dentistry',
+      title: 'Your favorite photos  ',
       description: 'some text some text some \n some text some text . ',
     },
     {
       imgSrc: '/Student.jpeg',
       alt: 'alhawsha',
-      title: 'Orthodontics',
+      title: 'Your favorite Writing',
       description: 'some text some text some \n some text some text .',
     },
     {
       imgSrc: '/spilled milk.jpeg',
       alt: 'alhawsha',
-      title: 'Oral Hygiene',
+      title: 'Your favorite design',
       description: 'some text some text some \n some text some text .',
     },
     {
       imgSrc: '/loading.jpeg',
       alt: 'alhawsha',
-      title: 'Cosmetic Dentistry',
+      title: 'Your favorite work',
       description: 'some text some text some \n some text some text .',
     },
     {
       imgSrc: '/moon.jpeg',
       alt: 'alhawsha',
-      title: 'Cosmetic Dentistry',
+      title: 'Your favorite shape',
       description: 'some text some text some \n some text some text .',
     },
     {
       imgSrc: '/Bear.jpeg',
       alt: 'alhawsha',
-      title: 'Cosmetic Dentistry',
+      title: 'Your favorite creative',
       description: 'some text some text some \n some text some text .',
     },
   ];
@@ -58,14 +60,14 @@ function Service() {
       behavior: 'smooth',
     });
   };
-
+  
   return (
     <div className="container mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-8">Services</h2>
-      <p className="text-2xl text-gray-600 text-center mb-16">
-        Our team of dentists can help with a variety of dental services.
+      <h2 className="text-3xl font-bold text-center mb-8" data-aos="fade-right">Services</h2>
+      <p className="text-2xl text-gray-600 text-center mb-16" data-aos="fade-right">
+        Our team can help with a variety of T shirt.
       </p>
-      <div className="relative flex justify-center items-center">
+      <div className="relative flex justify-center items-center" data-aos="fade-right">
         <button onClick={scrollLeft} className="absolute left-0 text-2xl w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center">
           <MdOutlineArrowBackIos />
         </button>

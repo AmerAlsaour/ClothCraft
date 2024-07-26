@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 function Buttonlight() {
   const navigate = useNavigate();
   const handleClickSign = () => {
-    navigate('Login', { replace: true }); // navigate to /another-page
+    navigate('Register', { replace: true }); // navigate to /another-page
   };
   return (
     <div className=" md:flex  items-center">
