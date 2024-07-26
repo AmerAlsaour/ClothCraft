@@ -72,7 +72,7 @@ function Register() {
           <div className="flex gap-4">
             <div className="relative flex flex-col w-full">
               <label htmlFor="text" className="text-gray-700 text-sm font-bold mb-2 bg-white absolute top-15 left-3 px-2">
-                username
+                Username
               </label>
               <input
                 type="text"
@@ -115,7 +115,7 @@ function Register() {
             </div>
             <div className="relative flex flex-col w-full">
               <label htmlFor="phoneNumber" className="text-gray-700 text-sm font-bold mb-2 bg-white absolute top-15 left-3 px-2">
-                Phone Number
+                Phone
               </label>
               <input
                 type="tel"
@@ -158,8 +158,8 @@ function Register() {
           </div>
           <button
             type="submit"
-            className=" bgblueden bgbluedenhover1 text-white font-bold py-2 px-4 rounded">
-            sign up
+            className=" bgblueden bgbluedenhover1 text-xl text-white font-bold py-2 px-4 rounded">
+           Sign Up
           </button>
           <p className="text-center mt-1 ">
             Already have an account?{' '}

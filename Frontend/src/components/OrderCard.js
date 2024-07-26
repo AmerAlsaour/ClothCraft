@@ -4,7 +4,7 @@ import picBack from '../Images/T-shirts/Black/back.png'
 import { AuthContext, useAuthContext } from '../context/AuthContext';
 import { Link, NavLink } from 'react-router-dom';
 
-const OrderCard = ({ front,back,buyer,price }) => {
+const OrderCard = ({ front,back,buyer,location }) => {
 const { authUser } = useAuthContext()
   console.log(authUser.username , "username");
   return (
@@ -18,6 +18,9 @@ const { authUser } = useAuthContext()
         </p>
         <p className=" text-2xl my-8  tracking-tight text-gray-900 dark:text-white">
           Price : 50,000 s.p
+        </p>
+        <p className=" text-2xl my-8  tracking-tight text-gray-900 dark:text-white">
+          Location : {location}
         </p>
         <NavLink className="focus:outline-none text-center text-white bg-orange-400 hover:bg-yellow-500 focus:ring-4 my-8 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2  dark:focus:ring-yellow-900"
         to={'/OrderDetails'}>Details</NavLink>

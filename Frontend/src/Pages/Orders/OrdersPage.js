@@ -26,6 +26,7 @@ const OrdersPage = () => {
             front={order.frontImage}
             back={order.backImage}
             buyer={order.buyerId.username}
+            location={order.buyerId.location}
           />
         ))}
       </div>
