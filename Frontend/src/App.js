@@ -1,13 +1,20 @@
-import './App.css';
-import Card from './components/Card';
-<link href="https://cdn.tailwindcss.com/your-tailwind-version/tailwind.min.css" rel="stylesheet"></link>
+import './Component/Style.css';
+import Login from './Pages/Log-in/Login.js'
+import Register from './Pages/Log-in/Register.js';
+import Homepage from './Hompage/Homepage.js';
+import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
 function App() {
-  
   return (
-    <div>
-    <Card/>
-    <h1 className='bg-red-500'>sdtyask</h1>
+    <div className='App'>
+    <Router>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Register' element={<Register />} />
+          </Routes>
+    </Router>
     </div>
+   
   );
 }
 

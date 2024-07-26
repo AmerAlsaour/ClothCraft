@@ -1,0 +1,73 @@
+.mw50{
+    width: 50vw;
+}
+.mw65{
+    width: 65vw;
+}
+.w35pers{
+    width: 35vw;
+}
+.blueden{
+    color: #fc9816;
+}
+.bgblueden{
+    background-color: #fc9816;
+}
+.borderbluedent{
+    border: 1px #e38f20 solid;
+}
+.borderbluedenthover:hover{
+    border: 1px #c47206 solid;
+}
+.borderbluedentfocus:focus{
+    border: 1px #c47206 solid;
+}
+.bluedenhover:hover{
+    color: #c47206;
+}
+.bluedenfocus:focus{
+    color: #3c3224;
+}
+.bluedenhover1:hover{
+    color: #c47206;
+}
+.whitedenhover:hover{
+    color: #1111;
+}
+.bgbluedenhover:hover{
+    background-color: #EF8F10;
+}
+.bgbluedenhover1:hover{
+    background-color: #f48f0a;
+}
+.top-15{
+    top: -15px;
+}
+@media screen and (max-width:800px) {
+    .flexclrev{
+        flex-direction: column-reverse;
+    }
+    .flexclomn{
+        flex-direction: column;
+    }
+    .margintop10{
+        margin-top: 250px;
+    }.margintop1{
+        margin-top: 25px;
+    }
+    .w100per{
+        width: 100vw;
+    }
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
