@@ -21,7 +21,7 @@ export const  getOrders = async (req,res)=>{
         const {username} = req.user
         if(username !== "medo")
             return res.status(401)
-        const orders = await Order.find().populate('buyerId')
+        const orders = await Order.find().populate('buyerId','-password')
         res.status(200).json(orders)
 
     } catch (error) {
@@ -29,3 +29,20 @@ export const  getOrders = async (req,res)=>{
         res.status(500).json({error:"internal server error"});
     }
 } 
+
+export const getOrderDetails = async(req,res)=>{
+    try {
+        const {username}= req.user
+        if(username !== "medo")
+            return res.status(401)
+        const {id} = req.params
+        const order = await Order.findById(id).populate('buyerId','-password')
+        if(!order)
+            return res.status(404).json({message:"order not found"})
+        return res.status(200).json(order)
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error:"internal server error"});
+    }
+}

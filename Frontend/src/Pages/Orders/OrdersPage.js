@@ -23,6 +23,7 @@ const OrdersPage = () => {
       <h1 className="text-3xl mx-auto font-bold mb-4">Orders</h1>
         {orders.map((order) => (
           <OrderCard
+            id={order._id}
             front={order.frontImage}
             back={order.backImage}
             buyer={order.buyerId.username}
