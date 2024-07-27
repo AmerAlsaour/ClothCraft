@@ -31,7 +31,11 @@ function Login() {
     if (res.ok) {
       localStorage.setItem('authUser', JSON.stringify(data))
       setAuthUser(data)
-      console.log(data, 'data');
+      console.log(data.username, 'data');
+
+      if(data.username === 'medo')
+        navigate('/orders')
+      else
       navigate('/HomePage')
     }
     else
@@ -91,17 +95,17 @@ function Login() {
               >
                 Login
               </button>
-              <a
-                href="/Resetpass"
-                className="inline-block align-baseline font-bold text-sm blueden bluedenhover1"
+              <Link
+                to="/Resetpass"
+                className="inline-block align-baseline font-bold text-sm p-2 blueden bluedenhover1"
               >
                 Forgot Password?
-              </a>
+              </Link>
             </div>
           </form>
           <p className="text-center text-gray-500 mt-4">
             Don't have an account? <a href="/Register" className="underline blueden">
-              Sign in
+              Sign Up
             </a>
             {/* <Link
               to="/"
