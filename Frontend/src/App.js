@@ -2,7 +2,7 @@ import "./Component/Style.css";
 import Login from "./Pages/Log-in/Login.js";
 import Register from "./Pages/Log-in/Register.js";
 import Landpage from "./Landpage/Landpage.js";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Homepage/HomePage.js";
 import OrdersPage from "./Pages/Orders/OrdersPage.js";
 import Customization from './Pages/Customization.js'

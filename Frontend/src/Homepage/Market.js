@@ -2,15 +2,18 @@ import React, { useRef ,useEffect} from 'react';
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md";
 import { motion } from 'framer-motion';
 import './../Component/Style.css';
+import image from '../Images/T-shirts/White/front.png'
+import { useNavigate } from 'react-router-dom';
 
 function Market() {
   const scrollContainerRef = useRef(null);
+  const navigate = useNavigate()
   useEffect(()=>{
     AOS.init({ duration:1000});
   },[]);
   const services = [
     {
-      imgSrc: '/market1.jpeg',
+      imgSrc: image,
       alt: 'tuth',
       title: 'programer  ',
       description: 'some text some text some \n some text some text . ',
@@ -78,7 +81,8 @@ function Market() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-3xl shadow-xl w-80 flex-shrink-0"
+              onClick={()=>navigate('/customize')}
+              className="bg-white rounded-3xl shadow-xl w-80 hover:cursor-pointer flex-shrink-0"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >

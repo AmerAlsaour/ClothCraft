@@ -35,7 +35,7 @@ function NavebarHome() {
           </a>
         </div>
         <div className=" md:flex  items-center mr-8 ">
-          <button className=" bgblueden  text-xl  borderbluedent border-2 rounded-xl px-8  text-white font-bold py-1 focus:outline-none focus:shadow-outline" onClick={handleClickSign}>
+          <button className=" bgblueden  text-xl  borderbluedent border-2 rounded-xl px-8  text-white py-1 focus:outline-none focus:shadow-outline" onClick={handleClickSign}>
             Logout 
           </button>
         </div>
