@@ -190,15 +190,15 @@ function Customization() {
       </nav>
       <div className="flex flex-col md:flex-row p-4">
         {showTextInputDialog &&
-          <div className='fixed top-20 left-1/3 w-[28rem] pb-5 bg-gray-500 opacity-[0.98] z-50 flex flex-col justify-between items-center rounded-lg'>
-            <div className=' bgblueden p-2 flex items-center justify-between w-full'>
+          <div className='fixed top-20 left-1/3 w-[28rem] pb-5 bg-slate-200   z-50 flex flex-col justify-between items-center rounded-lg'>
+            <div className=' bg-gray-800 rounded p-2 flex items-center justify-between w-full'>
               <h3 className='text-2xl font-bold text-white '>Add Text</h3>
               <IoMdClose onClick={() => setShowTextInputDialog(false)} className='size-6 hover:cursor-pointer text-white' />
             </div>
 
             <h3 className={`${textColor} ${isBold ? 'font-bold' : ''} ${isItalic ? 'italic' : ''} ${fontFamily} text-${fontSize} mt-3`}>{text}</h3>
             <div className="mb-6 w-4/5">
-              <label for="default-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text</label>
+              <label for="default-input" className="block mb-2 text-sm font-medium text-gray-900 ">Text</label>
               <textarea type="text" value={text} onChange={e => setText(e.target.value)} id="default-input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
             <div className="flex flex-wrap justify-between">
@@ -238,10 +238,10 @@ function Customization() {
               </div>
             </div>
             <div className="flex justify-between mt-4">
-              <button onClick={() => setIsBold(!isBold)} className={`bgblueden hover:bg-gray-900 mr-2 text-white font-bold py-2 px-4 rounded ${isBold ? 'bg-blue-500' : ''}`}>
+              <button onClick={() => setIsBold(!isBold)} className={`bg-gray-800 hover:bg-gray-900 mr-2 text-white font-bold py-2 px-4 rounded ${isBold ? 'bg-blue-500' : ''}`}>
                 <FaBold />
               </button>
-              <button onClick={() => setIsItalic(!isItalic)} className={`bgblueden hover:bg-gray-900 text-white font-bold py-2 px-4 rounded ${isItalic ? 'bg-blue-500' : ''}`}>
+              <button onClick={() => setIsItalic(!isItalic)} className={`bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded ${isItalic ? 'bg-blue-500' : ''}`}>
                 <FaItalic />
               </button>
             </div>
@@ -295,14 +295,14 @@ function Customization() {
             </select>
           </div>
           <h3 className="font-semibold mb-2">Add Elements</h3>
-          <div className="mb-4 flex">
+          <div className="mb-4 flex gap-4">
             <button
               onClick={() => setShowTextInputDialog(true)}
-              className="w-full p-2 mb-2 bg-orange-400 hover:bg-orange-500 text-white gap-3 rounded"
+              className="w-full p-2 text-center border text-black border-black hover:bg-gray-700 hover:text-white gap-3 rounded"
             >
               Add Text
             </button>
-            <label className="bg-gray-500 hover:cursor-pointer block hover:bg-gray-700 text-white w-full p-2 text-center rounded">
+            <label className="border border-black text-black hover:cursor-pointer block hover:bg-gray-700 hover:text-white w-full p-2 text-center rounded">
               Add Image
               <input
                 type="file"

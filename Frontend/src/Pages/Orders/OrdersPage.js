@@ -11,6 +11,7 @@ const OrdersPage = () => {
       });
       if (res.ok) {
         const data = await res.json();
+        data.reverse()
         setOrders(data);
         console.log(data);
       }
