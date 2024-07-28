@@ -23,7 +23,6 @@ const CustomClothingDetails = () => {
         <h1 className="text-3xl font-bold mb-6">Custom Clothing Details</h1>
         <div className="mb-8 bg-white shadow-md rounded-lg p-6">
           <h2 className="text-2xl font-semibold mb-4">Order Details</h2>
-          <p><strong>Order ID:</strong> {data._id}</p>
           <p><strong>Size:</strong> {data.size}</p>
           <p><strong>Buyer:</strong> {data.buyerId.username}</p>
           <p><strong>Email:</strong> {data.buyerId.email}</p>
@@ -39,6 +38,9 @@ const CustomClothingDetails = () => {
             {data.frontElements.map((element) => (
               <div key={element.id} className="mb-4 p-4 bg-gray-100 rounded">
                 <p><strong>Type:</strong> {element.type}</p>
+                {element.type === 'image' && (
+                  <img src={element.content} alt="Added Element" className="w-24 h-24 object-contain mb-2" />
+                )}
                 {element.type === 'text' && (
                   <>
                     <p><strong>Content:</strong> {element.content}</p>
@@ -63,6 +65,14 @@ const CustomClothingDetails = () => {
                 <p><strong>Type:</strong> {element.type}</p>
                 {element.type === 'image' && (
                   <img src={element.content} alt="Added Element" className="w-24 h-24 object-contain mb-2" />
+                )}
+                {element.type === 'text' && (
+                  <>
+                    <p><strong>Content:</strong> {element.content}</p>
+                    <p><strong>Font:</strong> {element.fontFamily}, {element.fontSize}</p>
+                    <p><strong>Style:</strong> {element.isBold ? 'Bold' : ''} {element.isItalic ? 'Italic' : ''}</p>
+                    <p><strong>Color:</strong> {element.textColor}</p>
+                  </>
                 )}
                 <p><strong>Position:</strong> X: {element.x}, Y: {element.y}</p>
                 <p><strong>Size:</strong> {element.width}x{element.height}</p>
