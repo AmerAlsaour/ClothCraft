@@ -5,7 +5,7 @@ function Hero() {
     <div className="">
           <img
             className="w-2/3  rounded-e-full borderbluedent"
-            src="./HeroLand.jpeg"
+            src="./Say.jpeg"
             alt="Hero Image"
           />
       </div>

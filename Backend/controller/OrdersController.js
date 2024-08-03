@@ -21,7 +21,7 @@ export const  getOrders = async (req,res)=>{
         const {username} = req.user
         if(username !== "medo")
             return res.status(401)
-        const orders = await Order.find().populate('buyerId','-password')
+        const orders = await Order.find().select('-frontElements -backElements -size').populate('buyerId','username location')
         res.status(200).json(orders)
 
     } catch (error) {

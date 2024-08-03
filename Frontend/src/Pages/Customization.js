@@ -298,7 +298,7 @@ function Customization() {
           <div className="mb-4 flex gap-4">
             <button
               onClick={() => setShowTextInputDialog(true)}
-              className="w-full p-2 text-center border text-black border-black hover:bg-gray-700 hover:text-white gap-3 rounded"
+              className={`w-full ${showTextInputDialog? "bg-gray-700 text-white":""} p-2 text-center border text-black border-black hover:bg-gray-700 hover:text-white gap-3 rounded`}
             >
               Add Text
             </button>
